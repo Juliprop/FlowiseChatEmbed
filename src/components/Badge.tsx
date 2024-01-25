@@ -53,7 +53,7 @@ export const Badge = (props: Props) => {
       Powered by
       <a
         ref={liteBadge}
-        href={'https://bonusclub.io'}
+        href={'https://bonusclub.io/'}
         target="_blank"
         rel="noopener noreferrer"
         class="lite-badge"
