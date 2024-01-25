@@ -428,9 +428,12 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
     <>
       <div
         ref={botContainer}
-        class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}
+        class={
+          'relative !bg-white rounded-xl flex w-full h-[50%] text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' +
+          props.class
+        }
       >
-        <div class="flex w-full h-full justify-center">
+        <div class="flex !bg-white w-full h-full justify-center pt-[2.5rem]">
           <div
             style={{ 'padding-bottom': '100px', 'padding-top': '0px' }}
             ref={chatContainer}
@@ -512,6 +515,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                 <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
               </Show>
               <div style={{ flex: 1 }} />
+
               <DeleteButton
                 sendButtonColor={props.bubbleTextColor}
                 type="button"
@@ -523,6 +527,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               </DeleteButton>
             </div>
           ) : null}
+
           <TextInput
             backgroundColor={props.textInput?.backgroundColor}
             textColor={props.textInput?.textColor}
@@ -541,6 +546,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             </div>
           </Show>
         </Show>
+        <Badge badgeBackgroundColor={botProps.badgeBackgroundColor} poweredByTextColor={botProps.poweredByTextColor} botContainer={chatContainer} />
         <BottomSpacer ref={bottomSpacer} />
       </div>
       {sourcePopupOpen() && <Popup isOpen={sourcePopupOpen()} value={sourcePopupSrc()} onClose={() => setSourcePopupOpen(false)} />}
