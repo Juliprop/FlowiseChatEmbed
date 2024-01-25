@@ -428,7 +428,9 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
     <>
       <div
         ref={botContainer}
-        class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}
+        class={
+          'relative rounded-md flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class
+        }
       >
         <div class="flex w-full h-full justify-center">
           <div
@@ -512,6 +514,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                 <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
               </Show>
               <div style={{ flex: 1 }} />
+
               <DeleteButton
                 sendButtonColor={props.bubbleTextColor}
                 type="button"
@@ -541,6 +544,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             </div>
           </Show>
         </Show>
+        <Badge badgeBackgroundColor={botProps.badgeBackgroundColor} poweredByTextColor={botProps.poweredByTextColor} botContainer={chatContainer} />
         <BottomSpacer ref={bottomSpacer} />
       </div>
       {sourcePopupOpen() && <Popup isOpen={sourcePopupOpen()} value={sourcePopupSrc()} onClose={() => setSourcePopupOpen(false)} />}
