@@ -429,7 +429,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       <div
         ref={botContainer}
         class={
-          'relative !bg-white rounded-xl flex w-full h-[50%] text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' +
+          'relative !bg-white rounded-xl flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' +
           props.class
         }
       >
