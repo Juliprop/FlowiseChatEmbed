@@ -512,8 +512,9 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                 </>
               </Show>
               <Show when={props.title}>
-                <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
+                <span class="px-3 text-black whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
               </Show>
+
               <div style={{ flex: 1 }} />
 
               <DeleteButton
@@ -527,6 +528,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               </DeleteButton>
             </div>
           ) : null}
+
+          <hr class="border-gray border-2 mb-1" />
 
           <TextInput
             backgroundColor={props.textInput?.backgroundColor}
