@@ -429,15 +429,15 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       <div
         ref={botContainer}
         class={
-          'relative !bg-white rounded-xl flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' +
+          'relative !bg-white rounded-3xl flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' +
           props.class
         }
       >
         <div class="flex !bg-white w-full h-full justify-center pt-[2.5rem]">
           <div
-            style={{ 'padding-bottom': '100px', 'padding-top': '0px' }}
+            style={{ 'padding-bottom': '100px', 'padding-top': '25px' }}
             ref={chatContainer}
-            class="overflow-y-scroll min-w-full w-full min-h-full px-3 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth"
+            class="overflow-y-scroll min-w-full w-full min-h-full px-4 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth"
           >
             <For each={[...messages()]}>
               {(message, index) => (
@@ -529,7 +529,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             </div>
           ) : null}
 
-          <hr class="border-gray border-2 mb-1" />
+          <hr class="border-gray h-3 w-full border-2 mb-1" />
 
           <TextInput
             backgroundColor={props.textInput?.backgroundColor}
