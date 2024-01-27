@@ -429,15 +429,15 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       <div
         ref={botContainer}
         class={
-          'relative !bg-white rounded-xl flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' +
+          'relative !bg-white rounded-3xl flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' +
           props.class
         }
       >
         <div class="flex !bg-white w-full h-full justify-center pt-[2.5rem]">
           <div
-            style={{ 'padding-bottom': '100px', 'padding-top': '0px' }}
+            style={{ 'padding-bottom': '100px', 'padding-top': '8px', 'margin-top': '10px' }}
             ref={chatContainer}
-            class="overflow-y-scroll min-w-full w-full min-h-full px-3 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth"
+            class="overflow-y-scroll min-w-full w-full max-h-[80%] px-4 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth"
           >
             <For each={[...messages()]}>
               {(message, index) => (
@@ -512,8 +512,9 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                 </>
               </Show>
               <Show when={props.title}>
-                <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
+                <span class="px-3 text-black whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
               </Show>
+
               <div style={{ flex: 1 }} />
 
               <DeleteButton
@@ -527,6 +528,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               </DeleteButton>
             </div>
           ) : null}
+
+          <hr class="border-gray h-3 w-full border-2 mb-1" />
 
           <TextInput
             backgroundColor={props.textInput?.backgroundColor}
